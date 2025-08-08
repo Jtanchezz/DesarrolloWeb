@@ -9,14 +9,30 @@
 
     <header>
         <h1>CV Jose Tanchez</h1>
-        <p>Email: <a href="mailto:jose.tanchez1028@gmail.com">jose.tanchez1028@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/Jtanchezz" target="_blank" rel="noopener noreferrer">github.com/Jtanchezz</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/josetanchezz/" target="_blank" rel="noopener noreferrer">linkedin.com/in/josetanchezz</a></p>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <a href="mailto:jose.tanchez1028@gmail.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email" width="30" height="30">
+            </a>
+            <a href="https://github.com/Jtanchezz" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="30" height="30">
+            </a>
+            <a href="https://www.linkedin.com/in/josetanchezz/" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="30" height="30">
+            </a>
+        </div>
         <img src="imagenJOSE.webp" alt="Foto de Jose Tanchez" width="200">
     </header>
+    <nav>
+        <ul>
+            <li><a href="#tecnologias">Tecnologías</a></li>
+            <li><a href="#lenguajes">Lenguajes</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#softskills">Soft Skills</a></li>
+        </ul>
+    </nav>
 
     <main>
-        <section>
+        <section id="tecnologias">
             <h2>Tecnologías Usadas</h2>
             <ul>
                 <li>HTML</li>
@@ -27,7 +43,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="lenguajes">
             <h2>Lenguajes de Programación</h2>
             <ul>
                 <li>Python</li>
@@ -38,7 +54,19 @@
             </ul>
         </section>
 
-        <section>
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <article>
+                <h3>Proyecto - Web App de Microservicios en AWS para Clima. Tráfico y Noticias</h3>
+                <p>Desarrollé una aplicación web de microservicios centrada en AWS que permite a los usuarios consultar el pronóstico del clima en cualquier país, visualizar el tráfico en tiempo real mediante un mapa interactivo y acceder a noticias globales. La aplicación fue implementada utilizando diversos servicios de AWS, incluyendo EC2, RDS, Amplify, VPS y S3. Además, configuré pipelines de CI/CD para realizar actualizaciones en tiempo real. El backend fue desarrollado en React, el frontend en Python, y la base de datos se alojó en Docker. Este proyecto me brindó experiencia profunda en despliegue en la nube, DevOps y arquitectura de microservicios con AWS como plataforma principal.</p>
+            </article>
+            <article>
+                <h3>Proyecto - Migración de Datos y Web App para Gestión Bancaria</h3>
+                <p>En este proyecto, migré una base de datos bancaria desde múltiples archivos Excel a PostgreSQL y luego la implementé en Docker. Además, desarrollé una aplicación web con vistas separadas para clientes y administradores. Los clientes podían gestionar sus solicitudes de préstamos, mientras que los administradores validaban pagos y revisaban solicitudes. El backend fue construido en React y el frontend en Python, brindando una experiencia eficiente y fluida. Esta experiencia fortaleció mis habilidades en desarrollo full stack y administración de bases de datos.</p>
+            </article>
+        </section>
+
+        <section id="softskills">
             <h2>Soft Skills</h2>
             <ul>
                 <li>Comunicaion efectiva</li>
@@ -49,6 +77,18 @@
             </ul>
         </section>
     </main>
+
+    <aside>
+        <h2>Información adicional</h2>
+        <ul>
+            <li>Disponibilidad: Inmediata</li>
+            <li>Ubicación: Guatemala</li>
+        </ul>
+    </aside>
+
+<footer style="text-align: center; margin-top: 2em;">
+    <button onclick="window.print()">Descargar CV en PDF</button>
+</footer>
 
 </body>
 </html>
