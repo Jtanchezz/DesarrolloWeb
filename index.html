@@ -32,6 +32,41 @@
     </nav>
 
     <main>
+        <section id="educacion"> <!-- Esto es una seccion tematica de educacion -->
+            <h2>Educación</h2> <!-- titulo de la seccion que es educacion -->
+            <table border="1"> <!-- dibujo de un borde simple -->
+                <caption>Tabla de educación con instituciones y títulos obtenidos</caption> <!-- explicacion visible de que tiene (accesibilidad) -->
+                <thead> <!-- agrupa encabezados -->
+                    <tr> <!-- abre fila de encabezados -->
+                        <th scope="col">Institución</th> <!-- encabezado de la columna institucion -->
+                        <th scope="col">Año</th> <!-- segundo encabezado de la columna año -->
+                        <th scope="col">Título obtenido</th> <!-- tercer encabezado de la columna titulo obtenido -->
+                    </tr> <!-- cierra la fila de encabezados -->
+                </thead> <!-- cierra el bloque de encabezados -->
+                <tbody> <!-- abre el cuerpo de la tabla -->
+                    <tr> <!-- abre una fila de datos -->
+                        <th scope="row">Universidad Francisco Marroquín</th> <!-- encabezado de la fila de row, lo que indica lo que describe -->
+                        <td>2023-2026</td> <!-- celda de datos donde estan los perdiodos  -->
+                        <td>Licenciatura en Computer Science</td> <!-- celda de datos donde esta el titulo obtenido -->
+                    </tr> <!-- cierra la primera fila -->
+                    <tr> <!-- abre la segunda fila de datos -->
+                        <th scope="row">Colegio Decroly Americano</th> <!-- ecabezado de la segunda fila de colegio -->
+                        <td>2009-2022</td> <!-- celda de datos de periodo -->
+                        <td>Bachillerato en Ciencias y Letras</td> <!-- celda de datos de titulo obtenido -->
+                    </tr> <!-- cierra la segunda fila de datos -->
+                    <tr> <!-- abre la tercera fila de datos -->
+                        <th scope="row">Universidad Francisco Marroquín Madrid</th> <!-- encabezado de tercer fila de universidad -->
+                        <td>2025-2025</td> <!-- celda de datos de el periodo -->
+                        <td>Licenciatura en Computer Science</td> <!-- celda de datos de titulo -->
+                    </tr> <!-- cierra la tercera fila de los datos de la tabla -->
+                </tbody> <!-- cierra el cuerpo de la tabla -->
+                <tfoot> <!-- abre el pie de la tabla para notas o resumen -->
+                    <tr> <!-- fila del pie -->
+                        <td colspan="3">* Información académica resumida</td> <!-- celda que ocupa el largo de las 3 columnas para la nota -->
+                    </tr> <!-- cierra la fila del pie -->
+                </tfoot> <!-- cierra el pie de la tabla -->
+            </table> <!-- cierra la tabla -->
+        </section> <!-- cierra la seccion de educacion -->
         <section id="tecnologias">
             <h2>Tecnologías Usadas</h2>
             <ul>
