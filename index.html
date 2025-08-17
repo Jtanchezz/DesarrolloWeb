@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Jose Tanchez</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png">
 </head>
 <body>
+<a href="#contenido">Saltar al contenido</a>
 
     <header>
         <h1>CV Jose Tanchez</h1>
         <div style="display: flex; justify-content: center; gap: 20px;">
-            <a href="mailto:jose.tanchez1028@gmail.com" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:jose.tanchez1028@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo a jose.tanchez1028@gmail.com">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email" width="30" height="30">
             </a>
-            <a href="https://github.com/Jtanchezz" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Jtanchezz" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de GitHub de Jtanchezz">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="30" height="30">
             </a>
-            <a href="https://www.linkedin.com/in/josetanchezz/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/josetanchezz/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de LinkedIn de josetanchezz">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="30" height="30">
             </a>
         </div>
         <img src="imagenJOSE.webp" alt="Foto de Jose Tanchez" width="200">
     </header>
-    <nav>
+    <nav aria-label="Secciones del CV">
         <ul>
             <li><a href="#tecnologias">Tecnologías</a></li>
             <li><a href="#lenguajes">Lenguajes</a></li>
@@ -31,11 +33,11 @@
         </ul>
     </nav>
 
-    <main>
+    <main id="contenido">
         <section id="educacion"> <!-- Esto es una seccion tematica de educacion -->
             <h2>Educación</h2> <!-- titulo de la seccion que es educacion -->
             <table border="1"> <!-- dibujo de un borde simple -->
-                <caption>Tabla de educación con instituciones y títulos obtenidos</caption> <!-- explicacion visible de que tiene (accesibilidad) -->
+                <caption>Tabla de educación (años, institución y título)</caption> <!-- explicacion visible de que tiene (accesibilidad) -->
                 <thead> <!-- agrupa encabezados -->
                     <tr> <!-- abre fila de encabezados -->
                         <th scope="col">Institución</th> <!-- encabezado de la columna institucion -->
@@ -114,7 +116,7 @@
         <section id="experiencia"> <!-- Esto es una seccion tematica de experiencia -->
             <h2>Experiencia Laboral</h2> <!-- titulo de la seccion que es experencia -->
             <table border="1"> <!-- tabla con borde simple -->
-                <caption>Tabla de experiencia laboral</caption> <!-- descripcion accesible de la tabla -->
+                <caption>Tabla de experiencia laboral (periodo, empresa y puesto)</caption> <!-- descripcion accesible de la tabla -->
                 <thead> <!-- encabezados de la tabla -->
                     <tr> <!-- fila de encabezados -->
                         <th scope="col">Periodo</th> <!-- encabezado columna periodo -->
@@ -152,7 +154,7 @@
     </aside>
 
 <footer style="text-align: center; margin-top: 2em;">
-    <button onclick="window.print()">Descargar CV en PDF</button>
+    <button onclick="window.print()" aria-label="Imprimir o guardar el CV en PDF">Descargar CV en PDF</button>
 </footer>
 
 </body>
