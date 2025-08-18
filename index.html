@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Jose Tanchez</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png">
 </head>
 <body>
+<a href="#contenido">Saltar al contenido</a>
 
     <header>
         <h1>CV Jose Tanchez</h1>
         <div style="display: flex; justify-content: center; gap: 20px;">
-            <a href="mailto:jose.tanchez1028@gmail.com" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:jose.tanchez1028@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo a jose.tanchez1028@gmail.com">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email" width="30" height="30">
             </a>
-            <a href="https://github.com/Jtanchezz" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Jtanchezz" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de GitHub de Jtanchezz">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="30" height="30">
             </a>
-            <a href="https://www.linkedin.com/in/josetanchezz/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/josetanchezz/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de LinkedIn de josetanchezz">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="30" height="30">
             </a>
         </div>
         <img src="imagenJOSE.webp" alt="Foto de Jose Tanchez" width="200">
     </header>
-    <nav>
+    <nav aria-label="Secciones del CV">
         <ul>
             <li><a href="#tecnologias">Tecnologías</a></li>
             <li><a href="#lenguajes">Lenguajes</a></li>
@@ -31,7 +33,42 @@
         </ul>
     </nav>
 
-    <main>
+    <main id="contenido">
+        <section id="educacion"> <!-- Esto es una seccion tematica de educacion -->
+            <h2>Educación</h2> <!-- titulo de la seccion que es educacion -->
+            <table border="1"> <!-- dibujo de un borde simple -->
+                <caption>Tabla de educación (años, institución y título)</caption> <!-- explicacion visible de que tiene (accesibilidad) -->
+                <thead> <!-- agrupa encabezados -->
+                    <tr> <!-- abre fila de encabezados -->
+                        <th scope="col">Institución</th> <!-- encabezado de la columna institucion -->
+                        <th scope="col">Año</th> <!-- segundo encabezado de la columna año -->
+                        <th scope="col">Título obtenido</th> <!-- tercer encabezado de la columna titulo obtenido -->
+                    </tr> <!-- cierra la fila de encabezados -->
+                </thead> <!-- cierra el bloque de encabezados -->
+                <tbody> <!-- abre el cuerpo de la tabla -->
+                    <tr> <!-- abre una fila de datos -->
+                        <th scope="row">Universidad Francisco Marroquín</th> <!-- encabezado de la fila de row, lo que indica lo que describe -->
+                        <td>2023-2026</td> <!-- celda de datos donde estan los perdiodos  -->
+                        <td>Licenciatura en Computer Science</td> <!-- celda de datos donde esta el titulo obtenido -->
+                    </tr> <!-- cierra la primera fila -->
+                    <tr> <!-- abre la segunda fila de datos -->
+                        <th scope="row">Colegio Decroly Americano</th> <!-- ecabezado de la segunda fila de colegio -->
+                        <td>2009-2022</td> <!-- celda de datos de periodo -->
+                        <td>Bachillerato en Ciencias y Letras</td> <!-- celda de datos de titulo obtenido -->
+                    </tr> <!-- cierra la segunda fila de datos -->
+                    <tr> <!-- abre la tercera fila de datos -->
+                        <th scope="row">Universidad Francisco Marroquín Madrid</th> <!-- encabezado de tercer fila de universidad -->
+                        <td>2025-2025</td> <!-- celda de datos de el periodo -->
+                        <td>Licenciatura en Computer Science</td> <!-- celda de datos de titulo -->
+                    </tr> <!-- cierra la tercera fila de los datos de la tabla -->
+                </tbody> <!-- cierra el cuerpo de la tabla -->
+                <tfoot> <!-- abre el pie de la tabla para notas o resumen -->
+                    <tr> <!-- fila del pie -->
+                        <td colspan="3">* Información académica resumida</td> <!-- celda que ocupa el largo de las 3 columnas para la nota -->
+                    </tr> <!-- cierra la fila del pie -->
+                </tfoot> <!-- cierra el pie de la tabla -->
+            </table> <!-- cierra la tabla -->
+        </section> <!-- cierra la seccion de educacion -->
         <section id="tecnologias">
             <h2>Tecnologías Usadas</h2>
             <ul>
@@ -76,6 +113,36 @@
                 <li>Gestion de tiempo</li>
             </ul>
         </section>
+        <section id="experiencia"> <!-- Esto es una seccion tematica de experiencia -->
+            <h2>Experiencia Laboral</h2> <!-- titulo de la seccion que es experencia -->
+            <table border="1"> <!-- tabla con borde simple -->
+                <caption>Tabla de experiencia laboral (periodo, empresa y puesto)</caption> <!-- descripcion accesible de la tabla -->
+                <thead> <!-- encabezados de la tabla -->
+                    <tr> <!-- fila de encabezados -->
+                        <th scope="col">Periodo</th> <!-- encabezado columna periodo -->
+                        <th scope="col">Empresa</th> <!-- encabezado columna empresa -->
+                        <th scope="col">Puesto</th> <!-- encabezado columna puesto -->
+                    </tr> <!-- cierre fila encabezados -->
+                </thead> <!-- cierre encabezados -->
+                <tbody> <!-- cuerpo de la tabla -->
+                    <tr> <!-- fila de datos 1 -->
+                        <th scope="row">2023-2025</th> <!-- encabezado fila periodo -->
+                        <td>Amazon</td> <!-- celda empresa -->
+                        <td>Desarrollador Web</td> <!-- celda puesto -->
+                    </tr> <!-- cierre fila 1 -->
+                    <tr> <!-- fila de datos 2 -->
+                        <th scope="row">2021-2023</th> <!-- encabezado fila periodo -->
+                        <td>Google</td> <!-- celda empresa -->
+                        <td>Backend developer</td> <!-- celda puesto -->
+                    </tr> <!-- cierre fila 2 -->
+                </tbody> <!-- cierre cuerpo tabla -->
+                <tfoot> <!-- pie de la tabla para nota/resumen -->
+                    <tr> <!-- fila del pie -->
+                        <td colspan="3">* Experiencia laboral resumida</td> <!-- celda que ocupa 3 columnas -->
+                    </tr> <!-- fin fila del pie -->
+                </tfoot> <!-- fin pie de tabla -->
+            </table> <!-- cierre tabla -->
+        </section> <!-- cierre de la seccion -->
     </main>
 
     <aside>
@@ -87,7 +154,7 @@
     </aside>
 
 <footer style="text-align: center; margin-top: 2em;">
-    <button onclick="window.print()">Descargar CV en PDF</button>
+    <button onclick="window.print()" aria-label="Imprimir o guardar el CV en PDF">Descargar CV en PDF</button>
 </footer>
 
 </body>
