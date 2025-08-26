@@ -100,3 +100,50 @@ aside{
   background: #fff;
 }
 
+footer{
+  text-align: center;
+  margin-top: 28px;
+}
+footer button{
+  padding: 10px 14px;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  background: white;
+  color: var(--accent);
+  border-radius: 8px;
+  cursor: pointer;
+}
+footer button:hover,
+footer button:focus-visible{
+  background: var(--accent);
+  color: white;
+}
+
+a[href="#contenido"]{
+  position: absolute;
+  left: -9999px;
+}
+a[href="#contenido"]:focus{
+  left: 16px;
+  top: 10px;
+  background: #fff;
+  border: 2px solid var(--accent);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px){
+  header h1{ font-size: 1.5rem; }
+  th, td{ padding: 8px; }
+  nav a{ padding: 6px 8px; }
+}
+@media (min-width: 900px){
+  body{ max-width: 980px; margin: 24px auto; }
+}
+
+@media print{
+  nav, footer, a[href="#contenido"]{ display: none !important; }
+  body{ margin: 0; }
+  table{ page-break-inside: avoid; }
+}
+
