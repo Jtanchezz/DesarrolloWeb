@@ -65,6 +65,19 @@ nav a:focus-visible{
 main section{ margin-bottom: 24px; }
 main h2{ margin: 0 0 10px; font-size: 1.4rem; }
 
+/* Grid layout for Proyectos cards */
+#proyectos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+#proyectos article{
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
 table{
   width: 100%;
   border-collapse: collapse;
