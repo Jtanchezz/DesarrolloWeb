@@ -62,3 +62,33 @@ nav a:focus-visible{
   text-decoration: underline;
 }
 
+main section{ margin-bottom: 24px; }
+main h2{ margin: 0 0 10px; font-size: 1.4rem; }
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background: rgb(255, 255, 255);
+}
+caption{
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+thead th{
+  background: var(--accent);
+  color: white;
+  text-align: left;
+}
+th, td{
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+}
+tbody tr:nth-child(even){ background: var(--bg-soft); }
+tfoot td{
+  font-size: .9rem;
+  color: var(--muted);
+}
+
