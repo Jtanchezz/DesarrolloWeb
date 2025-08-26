@@ -169,6 +169,18 @@ a[href="#contenido"]:focus{
   body{ max-width: 980px; margin: 24px auto; }
 }
 
+/* Desktop enhancements */
+@media (min-width: 1200px){
+  body{ max-width: 1200px; }
+  header h1{ font-size: 2rem; }
+  #proyectos{
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  #tecnologias ul{ gap: 14px; }
+  th, td{ padding: 12px 14px; }
+}
+
 @media print{
   nav, footer, a[href="#contenido"]{ display: none !important; }
   body{ margin: 0; }
