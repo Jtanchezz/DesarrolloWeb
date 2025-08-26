@@ -62,6 +62,21 @@ nav a:focus-visible{
   text-decoration: underline;
 }
 
+/* Flexbox layout for Tecnologías list */
+#tecnologias ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+#tecnologias li{
+  padding: 6px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #fff;
+}
+
 main section{ margin-bottom: 24px; }
 main h2{ margin: 0 0 10px; font-size: 1.4rem; }
 
