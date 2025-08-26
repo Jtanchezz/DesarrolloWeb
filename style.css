@@ -1,0 +1,43 @@
+:root{
+  --accent: #1f6feb;            /* color acento */
+  --text: #0f172a;              /* texto principal */
+  --muted: #64748b;             /* texto secundario */
+  --bg-soft: #f6f8fa;           /* fondos suaves (filas zebra) */
+}
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 16px;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header{ text-align: center; margin-block: 12px 20px; }
+header h1{ margin: 0 0 8px; font-size: 1.8rem; }
+header img[alt*="Foto"]{
+  display: block;
+  margin: 12px auto 0;
+  width: 180px;
+  max-width: 60vw;
+  border-radius: 12px;
+}
+
+header > div{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+header > div a{
+  display: inline-flex;
+  padding: 6px;
+  border-radius: 8px;
+  transition: transform .15s ease, background-color .15s ease;
+}
+header > div a:hover,
+header > div a:focus-visible{
+  background: var(--bg-soft);
+  outline: 2px solid transparent;
+  transform: translateY(-1px);
+}
