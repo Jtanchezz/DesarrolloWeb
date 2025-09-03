@@ -20,7 +20,6 @@ header img[alt*="Foto"]{
   margin: 12px auto 0;
   width: 180px;
   max-width: 60vw;
-  border-radius: 12px;
 }
 
 header > div{
