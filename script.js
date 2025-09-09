@@ -1,5 +1,3 @@
-
-
 // script.js
 document.addEventListener("DOMContentLoaded", () => {
   const saludo = document.getElementById("saludo");
@@ -17,4 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   saludo.textContent = mensaje;
+
+  // Botón para mostrar/ocultar experiencia laboral
+  const toggleBtn = document.getElementById("toggle-experiencia");
+  const experienciaSection = document.getElementById("experiencia");
+
+  if (toggleBtn && experienciaSection) {
+    toggleBtn.addEventListener("click", () => {
+      if (experienciaSection.style.display === "none") {
+        experienciaSection.style.display = "block";
+        toggleBtn.textContent = "Ocultar experiencia laboral";
+      } else {
+        experienciaSection.style.display = "none";
+        toggleBtn.textContent = "Mostrar experiencia laboral";
+      }
+    });
+  }
 });

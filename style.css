@@ -222,6 +222,31 @@ a[href="#contenido"]:focus{
   th, td{ padding: 12px 14px; }
 }
 
+/* ===== Polish visual (cohesion con --accent) ===== */
+.navbar{ background-color: var(--accent) !important; }
+.navbar .navbar-brand,
+.navbar .nav-link{ color:#fff !important; }
+.navbar .nav-link:hover,
+.navbar .nav-link:focus{ text-decoration: underline; }
+
+/* Saludo dinámico destacado */
+#saludo{ color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-top: 6px; }
+
+/* Badges más legibles */
+.badge{ margin: 4px 6px 0 0; font-weight: 600; }
+
+/* List group suavizado */
+.list-group-item{ border-color: #e5e7eb; }
+.list-group-item:hover{ background: var(--bg-soft); }
+
+/* Botón PDF con micro-animación */
+footer .btn{ box-shadow: 0 2px 8px rgba(31,111,235,.25); transition: transform .15s ease, box-shadow .15s ease; }
+footer .btn:hover,
+footer .btn:focus-visible{ transform: translateY(-1px); box-shadow: 0 6px 16px rgba(31,111,235,.35); }
+
+/* Tablas con sutil elevación y bordes redondeados */
+table{ box-shadow: 0 1px 6px rgba(0,0,0,.06); border-radius: 8px; }
+
 @media print{
   nav, footer, a[href="#contenido"]{ display: none !important; }
   body{ margin: 0; }
