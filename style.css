@@ -222,9 +222,89 @@ a[href="#contenido"]:focus{
   th, td{ padding: 12px 14px; }
 }
 
+/* ===== Polish visual (cohesion con --accent) ===== */
+.navbar{ background-color: var(--accent) !important; }
+.navbar .navbar-brand,
+.navbar .nav-link{ color:#fff !important; }
+.navbar .nav-link:hover,
+.navbar .nav-link:focus{ text-decoration: underline; }
+
+/* Saludo dinámico destacado */
+#saludo{ color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-top: 6px; }
+
+/* Badges más legibles */
+.badge{ margin: 4px 6px 0 0; font-weight: 600; }
+
+/* List group suavizado */
+.list-group-item{ border-color: #e5e7eb; }
+.list-group-item:hover{ background: var(--bg-soft); }
+
+/* Botón PDF con micro-animación */
+footer .btn{ box-shadow: 0 2px 8px rgba(31,111,235,.25); transition: transform .15s ease, box-shadow .15s ease; }
+footer .btn:hover,
+footer .btn:focus-visible{ transform: translateY(-1px); box-shadow: 0 6px 16px rgba(31,111,235,.35); }
+
+/* Tablas con sutil elevación y bordes redondeados */
+table{ box-shadow: 0 1px 6px rgba(0,0,0,.06); border-radius: 8px; }
+
+/* ===== Dark mode (activado con body.dark-mode) ===== */
+body.dark-mode{
+  background-color: #0b1220; /* fondo oscuro */
+  color: #e5e7eb;            /* texto claro */
+}
+body.dark-mode a{ color: #93c5fd; }              /* enlaces legibles */
+body.dark-mode #saludo{ color: #93c5fd; }        /* saludo con acento claro */
+body.dark-mode .navbar{
+  background-color: #0d3ea3 !important;          /* navbar más oscura pero azul */
+}
+body.dark-mode .list-group-item{
+  background-color: #0f172a;
+  color: #e5e7eb;
+  border-color: #1f2937;
+}
+body.dark-mode table{
+  background-color: #0f172a;
+}
+body.dark-mode thead th{
+  background: #1558b0;
+  color: #fff;
+}
+body.dark-mode th, body.dark-mode td{
+  border-color: #1f2937;
+}
+body.dark-mode tbody tr:nth-child(even){
+  background-color: #111827;
+}
+body.dark-mode footer .btn{
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+/* Proyectos en modo oscuro: fondo y texto legibles */
+
+body.dark-mode #proyectos article{
+  background: #1e293b;   /* fondo oscuro legible */
+  color: #e5e7eb;        /* texto claro */
+  border-color: #334155; /* borde acorde al tema oscuro */
+}
+
+/* Información adicional en modo oscuro */
+body.dark-mode aside{
+  background: #1e293b;   /* fondo oscuro legible */
+  color: #e5e7eb;        /* texto claro */
+  border-color: #334155; /* borde acorde al tema oscuro */
+}
+
+/* Información adicional alternativa en modo oscuro */
+body.dark-mode aside.alt{
+  background: #0f172a;   /* un tono diferente al de proyectos */
+  color: #f1f5f9;        /* texto más claro */
+  border-color: #1e293b;
+}
+
 @media print{
-  nav, footer, a[href="#contenido"]{ display: none !important; }
+  nav, footer, a[href="#covntenido"]{ display: none !important; }
   body{ margin: 0; }
   table{ page-break-inside: avoid; }
 }
-
