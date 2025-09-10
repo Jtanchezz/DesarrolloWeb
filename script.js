@@ -31,4 +31,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Botón para modo oscuro/claro (usando clase CSS)
+  const themeBtn = document.getElementById("toggle-theme");
+
+  if (themeBtn) {
+    const applyTheme = (isDark) => {
+      document.body.classList.toggle("dark-mode", isDark);
+      themeBtn.textContent = isDark ? "Modo claro" : "Modo oscuro";
+      themeBtn.setAttribute("aria-pressed", String(isDark));
+    };
+
+    // Estado inicial
+    let isDark = document.body.classList.contains("dark-mode");
+    applyTheme(isDark);
+
+    // Toggle al hacer clic
+    themeBtn.addEventListener("click", () => {
+      isDark = !isDark;
+      applyTheme(isDark);
+    });
+  }
 });
