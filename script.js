@@ -68,4 +68,26 @@ document.addEventListener("DOMContentLoaded", () => {
       applyTheme(isDark);
     });
   }
+  // Buscador de Soft Skills (filtra la lista en tiempo real)
+  const searchInput = document.getElementById("buscador-skills");
+  const skillsList = document.getElementById("lista-skills");
+
+  if (searchInput && skillsList) {
+    const items = Array.from(skillsList.querySelectorAll("li"));
+
+    // Normaliza texto para búsqueda sin tildes y sin mayúsculas
+    const normalize = (str) =>
+      (str || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+    searchInput.addEventListener("input", () => {
+      const q = normalize(searchInput.value.trim());
+      items.forEach((li) => {
+        const text = normalize(li.textContent);
+        li.style.display = text.includes(q) ? "" : "none";
+      });
+    });
+  }
 });
