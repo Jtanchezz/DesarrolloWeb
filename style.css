@@ -296,6 +296,13 @@ body.dark-mode aside{
   border-color: #334155; /* borde acorde al tema oscuro */
 }
 
+/* Información adicional alternativa en modo oscuro */
+body.dark-mode aside.alt{
+  background: #0f172a;   /* un tono diferente al de proyectos */
+  color: #f1f5f9;        /* texto más claro */
+  border-color: #1e293b;
+}
+
 @media print{
   nav, footer, a[href="#covntenido"]{ display: none !important; }
   body{ margin: 0; }

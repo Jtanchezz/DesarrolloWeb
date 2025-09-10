@@ -32,6 +32,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Botón para mostrar/ocultar información adicional
+  const toggleContactoBtn = document.getElementById("toggle-contacto");
+  const contactoSection = document.getElementById("contacto");
+
+  if (toggleContactoBtn && contactoSection) {
+    toggleContactoBtn.addEventListener("click", () => {
+      if (contactoSection.style.display === "none") {
+        contactoSection.style.display = "block";
+        toggleContactoBtn.textContent = "Ocultar información de contacto";
+      } else {
+        contactoSection.style.display = "none";
+        toggleContactoBtn.textContent = "Mostrar información de contacto";
+      }
+    });
+  }
+
   // Botón para modo oscuro/claro (usando clase CSS)
   const themeBtn = document.getElementById("toggle-theme");
 
