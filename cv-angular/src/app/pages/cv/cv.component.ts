@@ -7,6 +7,7 @@ import { SkillsComponent } from '../../sections/skills/skills.component';
 
 @Component({
   selector: 'app-cv',
+  standalone: true,
   imports: [
     HeaderComponent,
     SummaryComponent,

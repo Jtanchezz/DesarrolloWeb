@@ -1,3 +1,35 @@
-<section class="section">
-  <h2>Experience Section</h2>
+<section class="cv-experience" id="experiencia">
+  <h2>Experiencia Laboral</h2>
+  <div class="cv-experience__actions">
+    <button
+      type="button"
+      (click)="toggleExperience()"
+      [attr.aria-expanded]="showExperience"
+      aria-controls="experience-table"
+    >
+      {{ showExperience ? 'Ocultar experiencia laboral' : 'Mostrar experiencia laboral' }}
+    </button>
+  </div>
+  <table *ngIf="showExperience" id="experience-table">
+    <caption>{{ caption }}</caption>
+    <thead>
+      <tr>
+        <th scope="col">Periodo</th>
+        <th scope="col">Empresa</th>
+        <th scope="col">Puesto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <th scope="row">{{ item.period }}</th>
+        <td>{{ item.company }}</td>
+        <td>{{ item.role }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">{{ footnote }}</td>
+      </tr>
+    </tfoot>
+  </table>
 </section>
