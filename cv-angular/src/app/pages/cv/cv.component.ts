@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeaderComponent } from '../../sections/header/header.component';
 import { SummaryComponent } from '../../sections/summary/summary.component';
 import { ExperienceComponent } from '../../sections/experience/experience.component';
@@ -16,6 +16,7 @@ import { SkillsComponent } from '../../sections/skills/skills.component';
     SkillsComponent
   ],
   templateUrl: './cv.component.html',
-  styleUrl: './cv.component.css'
+  styleUrl: './cv.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvComponent {}

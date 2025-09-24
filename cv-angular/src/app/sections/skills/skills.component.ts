@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { softSkills } from '../../data/cv-data';
@@ -8,7 +8,8 @@ import { softSkills } from '../../data/cv-data';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css'
+  styleUrl: './skills.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent {
   readonly skills = softSkills;

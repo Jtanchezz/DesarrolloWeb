@@ -1,4 +1,4 @@
-<section class="cv-skills" id="softskills">
+<section class="cv-skills cv-card" id="softskills">
   <h2>Soft Skills</h2>
   <div class="cv-skills__search">
     <input
@@ -8,7 +8,12 @@
       aria-label="Buscar habilidad en la lista de Soft Skills"
     />
   </div>
-  <ul class="cv-skills__list">
-    <li *ngFor="let skill of filteredSkills">{{ skill.name }}</li>
-  </ul>
+  <ng-container *ngIf="filteredSkills as results">
+    <ul class="cv-skills__list" *ngIf="results.length > 0; else emptyState">
+      <li *ngFor="let skill of results">{{ skill.name }}</li>
+    </ul>
+    <ng-template #emptyState>
+      <p class="cv-skills__empty">No se encontraron habilidades.</p>
+    </ng-template>
+  </ng-container>
 </section>

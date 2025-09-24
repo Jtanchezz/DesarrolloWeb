@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { experienceHistory } from '../../data/cv-data';
 
@@ -7,7 +7,8 @@ import { experienceHistory } from '../../data/cv-data';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.css'
+  styleUrl: './experience.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExperienceComponent {
   readonly items = experienceHistory;

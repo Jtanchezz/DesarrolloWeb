@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { educationHistory } from '../../data/cv-data';
 
@@ -7,7 +7,8 @@ import { educationHistory } from '../../data/cv-data';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './education.component.html',
-  styleUrl: './education.component.css'
+  styleUrl: './education.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EducationComponent {
   readonly items = educationHistory;

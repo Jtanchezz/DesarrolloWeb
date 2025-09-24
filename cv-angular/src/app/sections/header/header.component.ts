@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { contactLinks, navItems, profile } from '../../data/cv-data';
 
@@ -7,7 +7,8 @@ import { contactLinks, navItems, profile } from '../../data/cv-data';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   readonly profile = profile;

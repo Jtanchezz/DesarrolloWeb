@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { extraInfo, languages, projects, technologies } from '../../data/cv-data';
 
@@ -7,7 +7,8 @@ import { extraInfo, languages, projects, technologies } from '../../data/cv-data
   standalone: true,
   imports: [CommonModule],
   templateUrl: './summary.component.html',
-  styleUrl: './summary.component.css'
+  styleUrl: './summary.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SummaryComponent {
   readonly technologies = technologies;
