@@ -1,0 +1,127 @@
+.cv-summary {
+  display: grid;
+  gap: 2rem;
+}
+
+.cv-summary__block,
+.cv-summary__extra {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: inset 0 0 0 1px rgba(22, 33, 62, 0.05);
+}
+
+.cv-summary__block h2,
+.cv-summary__extra h3 {
+  margin-top: 0;
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
+}
+
+.cv-summary__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+.cv-summary__badge {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.cv-summary__badge[data-tone='primary'] {
+  background: var(--color-badge-primary);
+}
+
+.cv-summary__badge[data-tone='secondary'] {
+  background: var(--color-badge-secondary);
+}
+
+.cv-summary__badge[data-tone='success'] {
+  background: var(--color-badge-success);
+}
+
+.cv-summary__badge[data-tone='warning'] {
+  background: var(--color-badge-warning);
+  color: #2f1b00;
+}
+
+.cv-summary__badge[data-tone='info'] {
+  background: var(--color-badge-info);
+  color: #16213e;
+}
+
+.cv-summary__block ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.cv-summary__project + .cv-summary__project {
+  margin-top: 1.5rem;
+}
+
+.cv-summary__project h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+}
+
+.cv-summary__project p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.cv-summary__extra ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cv-summary__extra-label {
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-right: 0.4rem;
+}
+
+.cv-summary__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.cv-summary__actions button {
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.85rem 2.2rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cv-summary__actions button:hover,
+.cv-summary__actions button:focus-visible {
+  transform: translateY(-1.5px);
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.16);
+}
+
+@media (min-width: 900px) {
+  .cv-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #proyectos,
+  .cv-summary__actions {
+    grid-column: 1 / -1;
+  }
+}
