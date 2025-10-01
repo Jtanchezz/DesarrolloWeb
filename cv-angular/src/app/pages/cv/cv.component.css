@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 2.5rem;
   position: relative;
+  margin-inline: auto;
 }
 
 .cv-skip-link {
