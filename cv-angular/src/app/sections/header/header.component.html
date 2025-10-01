@@ -1,0 +1,48 @@
+<header class="cv-header" id="top">
+  <div class="cv-header__content">
+    <div class="cv-header__details">
+      <p class="cv-header__greeting">{{ greeting }}</p>
+      <h1 class="cv-header__name">{{ profile.name }}</h1>
+      <p class="cv-header__headline">{{ profile.headline }}</p>
+      <p class="cv-header__summary">{{ profile.summary }}</p>
+      <div class="cv-header__actions">
+        <button type="button" (click)="toggleTheme()" [attr.aria-pressed]="isDarkMode">
+          {{ isDarkMode ? 'Modo claro' : 'Modo oscuro' }}
+        </button>
+        <button
+          type="button"
+          (click)="toggleContact()"
+          [attr.aria-expanded]="showContact"
+          aria-controls="contact-links"
+        >
+          {{ showContact ? 'Ocultar información de contacto' : 'Mostrar información de contacto' }}
+        </button>
+      </div>
+      <div class="cv-header__contact" *ngIf="showContact" id="contact-links">
+        <a
+          *ngFor="let link of contactLinks"
+          [href]="link.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="link.ariaLabel"
+        >
+          <img [src]="link.icon" [alt]="link.label" width="30" height="30" />
+        </a>
+      </div>
+      <nav class="cv-nav" aria-label="Secciones del CV">
+        <a *ngFor="let item of navItems" class="cv-nav__link" [attr.href]="'#' + item.fragment">
+          {{ item.label }}
+        </a>
+      </nav>
+    </div>
+    <div class="cv-header__photo-wrapper">
+      <img
+        [src]="profile.photo"
+        [alt]="profile.photoAlt"
+        class="cv-header__photo"
+        width="200"
+        height="200"
+      />
+    </div>
+  </div>
+</header>

@@ -1,0 +1,52 @@
+.cv-skills h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.6rem;
+}
+
+.cv-skills__search {
+  margin-bottom: 1.5rem;
+}
+
+.cv-skills__search input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cv-skills__search input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(39, 70, 144, 0.18);
+}
+
+.cv-skills__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cv-skills__list li {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(87, 108, 168, 0.1);
+  font-weight: 600;
+  color: var(--color-primary);
+  border: 1px solid transparent;
+}
+
+.cv-skills__list li:nth-child(even) {
+  background: rgba(39, 70, 144, 0.12);
+}
+
+.cv-skills__empty {
+  margin: 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-weight: 600;
+}
