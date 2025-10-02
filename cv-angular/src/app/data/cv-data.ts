@@ -75,6 +75,7 @@ export const navItems: NavItem[] = [
   { label: 'Tecnologías', fragment: 'tecnologias' },
   { label: 'Lenguajes', fragment: 'lenguajes' },
   { label: 'Proyectos', fragment: 'proyectos' },
+  { label: 'Stack Overflow', fragment: 'stackoverflow' },
   { label: 'Soft Skills', fragment: 'softskills' },
   { label: 'Experiencia', fragment: 'experiencia' }
 ];

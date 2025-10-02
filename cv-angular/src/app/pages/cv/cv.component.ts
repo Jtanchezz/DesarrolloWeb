@@ -3,7 +3,9 @@ import { HeaderComponent } from '../../sections/header/header.component';
 import { SummaryComponent } from '../../sections/summary/summary.component';
 import { ExperienceComponent } from '../../sections/experience/experience.component';
 import { EducationComponent } from '../../sections/education/education.component';
+import { ProjectsComponent } from '../../sections/projects/projects.component';
 import { SkillsComponent } from '../../sections/skills/skills.component';
+import { StackOverflowComponent } from '../../sections/stackoverflow/stack-overflow.component';
 
 @Component({
   selector: 'app-cv',
@@ -13,7 +15,9 @@ import { SkillsComponent } from '../../sections/skills/skills.component';
     SummaryComponent,
     ExperienceComponent,
     EducationComponent,
-    SkillsComponent
+    ProjectsComponent,
+    SkillsComponent,
+    StackOverflowComponent
   ],
   templateUrl: './cv.component.html',
   styleUrl: './cv.component.css',
