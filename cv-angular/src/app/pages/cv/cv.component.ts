@@ -5,6 +5,7 @@ import { ExperienceComponent } from '../../sections/experience/experience.compon
 import { EducationComponent } from '../../sections/education/education.component';
 import { ProjectsComponent } from '../../sections/projects/projects.component';
 import { SkillsComponent } from '../../sections/skills/skills.component';
+import { StackOverflowComponent } from '../../sections/stackoverflow/stack-overflow.component';
 
 @Component({
   selector: 'app-cv',
@@ -15,7 +16,8 @@ import { SkillsComponent } from '../../sections/skills/skills.component';
     ExperienceComponent,
     EducationComponent,
     ProjectsComponent,
-    SkillsComponent
+    SkillsComponent,
+    StackOverflowComponent
   ],
   templateUrl: './cv.component.html',
   styleUrl: './cv.component.css',

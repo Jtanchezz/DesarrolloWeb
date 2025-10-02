@@ -1,0 +1,133 @@
+.cv-stackoverflow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cv-stackoverflow__header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.cv-stackoverflow__header p {
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+}
+
+.cv-stackoverflow__status {
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  background: rgba(39, 70, 144, 0.08);
+  color: var(--color-muted);
+}
+
+.cv-stackoverflow__status--error {
+  background: rgba(205, 55, 96, 0.12);
+  color: #8a1f3c;
+}
+
+.cv-stackoverflow__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cv-stackoverflow__identity {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.cv-stackoverflow__identity img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.cv-stackoverflow__identity h3 {
+  margin: 0;
+}
+
+.cv-stackoverflow__reputation {
+  margin: 0.35rem 0 0;
+  font-weight: 600;
+}
+
+.cv-stackoverflow__location {
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+}
+
+.cv-stackoverflow__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.cv-stackoverflow__stats dt {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.cv-stackoverflow__stats dd {
+  margin: 0.25rem 0 0;
+  font-size: 1.1rem;
+}
+
+.cv-stackoverflow__badges {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.cv-stackoverflow__badges > div {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+}
+
+.badge {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge--gold {
+  background: linear-gradient(135deg, #f7c948, #d29b24);
+}
+
+.badge--silver {
+  background: linear-gradient(135deg, #d9d9d9, #a8a8a8);
+}
+
+.badge--bronze {
+  background: linear-gradient(135deg, #caa472, #8c6239);
+}
+
+.cv-stackoverflow__link {
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cv-stackoverflow__link:hover,
+.cv-stackoverflow__link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+}
+
+@media (max-width: 640px) {
+  .cv-stackoverflow__identity {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

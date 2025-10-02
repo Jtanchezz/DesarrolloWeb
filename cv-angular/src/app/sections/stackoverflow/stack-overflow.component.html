@@ -1,0 +1,76 @@
+<section class="cv-stackoverflow cv-card" id="stackoverflow" aria-labelledby="stack-overflow-title">
+  <header class="cv-stackoverflow__header">
+    <h2 id="stack-overflow-title">Perfil en Stack Overflow</h2>
+    <p>Resumen del perfil público y actividad reciente.</p>
+  </header>
+
+  <div class="cv-stackoverflow__status" *ngIf="isLoading()">
+    <p>Cargando perfil…</p>
+  </div>
+
+  <div class="cv-stackoverflow__status cv-stackoverflow__status--error" *ngIf="hasError()">
+    <p>{{ error() }}</p>
+  </div>
+
+  <ng-container *ngIf="profile$ | async as profile">
+    <div class="cv-stackoverflow__content" *ngIf="profile; else emptyState">
+      <div class="cv-stackoverflow__identity">
+        <img *ngIf="profile.profileImage" [src]="profile.profileImage" [alt]="profile.displayName" />
+        <div>
+          <h3>{{ profile.displayName }}</h3>
+          <p class="cv-stackoverflow__reputation">Reputación: {{ profile.reputation | number }}</p>
+          <p *ngIf="profile.location" class="cv-stackoverflow__location">{{ profile.location }}</p>
+        </div>
+      </div>
+
+      <dl class="cv-stackoverflow__stats">
+        <div>
+          <dt>Respuestas</dt>
+          <dd>{{ profile.answers ?? '—' }}</dd>
+        </div>
+        <div>
+          <dt>Preguntas</dt>
+          <dd>{{ profile.questions ?? '—' }}</dd>
+        </div>
+        <div>
+          <dt>Miembro desde</dt>
+          <dd>
+            <ng-container *ngIf="profile.memberSince; else unknownDate">
+              {{ profile.memberSince | date: 'MMMM yyyy' }}
+            </ng-container>
+          </dd>
+        </div>
+      </dl>
+
+      <section class="cv-stackoverflow__badges" aria-label="Badges">
+        <div>
+          <span class="badge badge--gold"></span>
+          <strong>{{ profile.badges.gold }}</strong>
+          <span>Oro</span>
+        </div>
+        <div>
+          <span class="badge badge--silver"></span>
+          <strong>{{ profile.badges.silver }}</strong>
+          <span>Plata</span>
+        </div>
+        <div>
+          <span class="badge badge--bronze"></span>
+          <strong>{{ profile.badges.bronze }}</strong>
+          <span>Bronce</span>
+        </div>
+      </section>
+
+      <a class="cv-stackoverflow__link" [href]="profile.profileUrl" target="_blank" rel="noopener noreferrer">
+        Ver perfil en Stack Overflow
+      </a>
+    </div>
+  </ng-container>
+
+  <ng-template #unknownDate>—</ng-template>
+
+  <ng-template #emptyState>
+    <div class="cv-stackoverflow__status">
+      <p>No se encontró información del perfil.</p>
+    </div>
+  </ng-template>
+</section>
