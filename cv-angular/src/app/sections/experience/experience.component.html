@@ -33,8 +33,14 @@
     </tfoot>
   </table>
   <nav class="cv-experience__nav" aria-label="Secciones de experiencia">
-    <a routerLink="jobs" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Trabajos</a>
-    <a routerLink="studies" routerLinkActive="is-active">Estudios</a>
+    <a
+      routerLink="/experience/jobs"
+      routerLinkActive="is-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Trabajos
+    </a>
+    <a routerLink="/experience/studies" routerLinkActive="is-active">Estudios</a>
   </nav>
   <router-outlet></router-outlet>
 </section>
