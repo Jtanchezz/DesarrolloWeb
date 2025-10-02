@@ -1,0 +1,13 @@
+<section class="cv-experience-studies cv-card" aria-labelledby="experience-studies-title">
+  <h3 id="experience-studies-title">Lista de estudios</h3>
+  <p class="cv-experience-studies__intro">
+    Programas académicos completados y en curso.
+  </p>
+  <ul>
+    <li *ngFor="let study of studies">
+      <span class="cv-experience-studies__institution">{{ study.institution }}</span>
+      <span class="cv-experience-studies__degree">{{ study.degree | titlecase }}</span>
+      <span class="cv-experience-studies__period">{{ study.period }}</span>
+    </li>
+  </ul>
+</section>
