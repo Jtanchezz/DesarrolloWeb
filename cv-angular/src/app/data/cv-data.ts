@@ -30,10 +30,6 @@ export interface ProjectItem {
   description: string;
 }
 
-export interface SkillItem {
-  name: string;
-}
-
 export interface ExperienceItem {
   period: string;
   company: string;
@@ -128,14 +124,6 @@ export const projects: ProjectItem[] = [
     description:
       'Migración de datos bancarios desde archivos Excel a PostgreSQL en Docker y desarrollo de una aplicación web con vistas separadas para clientes y administradores, construida con React y Python.'
   }
-];
-
-export const softSkills: SkillItem[] = [
-  { name: 'Comunicación efectiva' },
-  { name: 'Trabajo en equipo' },
-  { name: 'Pensamiento crítico' },
-  { name: 'Liderazgo' },
-  { name: 'Gestión de tiempo' }
 ];
 
 export const experienceHistory: ExperienceItem[] = [

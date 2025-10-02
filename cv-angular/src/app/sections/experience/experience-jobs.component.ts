@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { experienceHistory } from '../../data/cv-data';
+import { DataService } from '../../data/data.service';
 
 @Component({
   selector: 'app-experience-jobs',
@@ -12,5 +12,9 @@ import { experienceHistory } from '../../data/cv-data';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExperienceJobsComponent {
-  readonly jobs = experienceHistory;
+  readonly jobs: readonly string[];
+
+  constructor(private readonly dataService: DataService) {
+    this.jobs = this.dataService.jobs;
+  }
 }

@@ -19,35 +19,17 @@
 }
 
 .cv-experience-jobs li {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  align-items: baseline;
   padding: 0.85rem 1rem;
   border-radius: var(--radius-md);
-  background: rgba(87, 108, 168, 0.06);
+  background: rgba(87, 108, 168, 0.08);
   border: 1px solid rgba(87, 108, 168, 0.12);
-}
-
-.cv-experience-jobs__role {
   font-weight: 600;
-  color: var(--color-text);
-}
-
-.cv-experience-jobs__company {
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: var(--color-accent);
-}
-
-.cv-experience-jobs__period {
-  font-size: 0.9rem;
-  color: var(--color-muted);
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 640px) {
   .cv-experience-jobs li {
-    flex-direction: column;
-    align-items: flex-start;
+    text-align: center;
   }
 }

@@ -5,9 +5,7 @@
   </p>
   <ul>
     <li *ngFor="let job of jobs">
-      <span class="cv-experience-jobs__role">{{ job.role }}</span>
-      <span class="cv-experience-jobs__company">{{ job.company | uppercase }}</span>
-      <span class="cv-experience-jobs__period">{{ job.period }}</span>
+      {{ job | titlecase }}
     </li>
   </ul>
 </section>
