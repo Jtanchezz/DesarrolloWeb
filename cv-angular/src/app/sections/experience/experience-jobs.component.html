@@ -1,0 +1,13 @@
+<section class="cv-experience-jobs cv-card" aria-labelledby="experience-jobs-title">
+  <h3 id="experience-jobs-title">Lista de trabajos</h3>
+  <p class="cv-experience-jobs__intro">
+    Resumen de los puestos desempeñados más recientes.
+  </p>
+  <ul>
+    <li *ngFor="let job of jobs">
+      <span class="cv-experience-jobs__role">{{ job.role }}</span>
+      <span class="cv-experience-jobs__company">{{ job.company | uppercase }}</span>
+      <span class="cv-experience-jobs__period">{{ job.period }}</span>
+    </li>
+  </ul>
+</section>
