@@ -10,7 +10,7 @@
   </div>
   <ng-container *ngIf="filteredSkills as results">
     <ul class="cv-skills__list" *ngIf="results.length > 0; else emptyState">
-      <li *ngFor="let skill of results">{{ skill }}</li>
+      <li *ngFor="let skill of results">{{ skill | capitalize }}</li>
     </ul>
     <ng-template #emptyState>
       <p class="cv-skills__empty">No se encontraron habilidades.</p>

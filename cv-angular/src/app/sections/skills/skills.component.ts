@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { DataService } from '../../data/data.service';
+import { CapitalizePipe } from '../../pipes/capitalize.pipe';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CapitalizePipe],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
