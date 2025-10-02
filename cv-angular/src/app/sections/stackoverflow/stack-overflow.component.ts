@@ -1,4 +1,4 @@
-import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
+import { AsyncPipe, DatePipe, NgIf, DecimalPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { of } from 'rxjs';
 import { catchError, finalize } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { StackOverflowProfile, StackOverflowService } from './stack-overflow.ser
 @Component({
   selector: 'app-stack-overflow-card',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, NgIf],
+  imports: [AsyncPipe, DatePipe, DecimalPipe, NgIf],
   templateUrl: './stack-overflow.component.html',
   styleUrl: './stack-overflow.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
