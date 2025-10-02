@@ -1,0 +1,35 @@
+.cv-experience-jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cv-experience-jobs__intro {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.cv-experience-jobs ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-experience-jobs li {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(87, 108, 168, 0.08);
+  border: 1px solid rgba(87, 108, 168, 0.12);
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .cv-experience-jobs li {
+    text-align: center;
+  }
+}
