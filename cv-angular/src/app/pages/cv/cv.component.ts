@@ -3,6 +3,7 @@ import { HeaderComponent } from '../../sections/header/header.component';
 import { SummaryComponent } from '../../sections/summary/summary.component';
 import { ExperienceComponent } from '../../sections/experience/experience.component';
 import { EducationComponent } from '../../sections/education/education.component';
+import { ProjectsComponent } from '../../sections/projects/projects.component';
 import { SkillsComponent } from '../../sections/skills/skills.component';
 
 @Component({
@@ -13,6 +14,7 @@ import { SkillsComponent } from '../../sections/skills/skills.component';
     SummaryComponent,
     ExperienceComponent,
     EducationComponent,
+    ProjectsComponent,
     SkillsComponent
   ],
   templateUrl: './cv.component.html',
