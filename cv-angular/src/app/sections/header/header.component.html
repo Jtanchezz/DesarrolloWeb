@@ -34,6 +34,20 @@
           {{ item.label }}
         </a>
       </nav>
+      <nav class="cv-nav cv-nav--routes" aria-label="Páginas">
+        <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" class="cv-nav__link">
+          Inicio
+        </a>
+        <a routerLink="/skills" routerLinkActive="is-active" class="cv-nav__link">
+          Skills
+        </a>
+        <a routerLink="/experience" routerLinkActive="is-active" class="cv-nav__link">
+          Experiencia
+        </a>
+        <a routerLink="/experience/studies" routerLinkActive="is-active" class="cv-nav__link">
+          Estudios
+        </a>
+      </nav>
     </div>
     <div class="cv-header__photo-wrapper">
       <img

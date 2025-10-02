@@ -9,6 +9,11 @@ import { SkillsComponent } from './sections/skills/skills.component';
 
 export const routes: Routes = [
   {
+    path: '',
+    component: CvComponent,
+    pathMatch: 'full'
+  },
+  {
     path: 'about',
     component: CvComponent
   },
@@ -34,6 +39,10 @@ export const routes: Routes = [
         component: ExperienceStudiesComponent
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
