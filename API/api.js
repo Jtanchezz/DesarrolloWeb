@@ -1,119 +1,109 @@
 // ========================================
-// API REST SIMPLE PARA GESTIONAR PROYECTOS
+// API REST SIMPLE PARA GESTIONAR EXPERIENCIA LABORAL
 // ========================================
 
-// 1. IMPORTAR LAS LIBRERÍAS QUE NECESITAMOS (SE QUEDA IGUAL)
-const express = require('express'); // Express: framework para crear APIs
-const cors = require('cors');       // CORS: permite que otros sitios web usen nuestra API
+const express = require('express');
+const cors = require('cors');
 
-// 2. CONFIGURAR NUESTRA APLICACIÓN (CAMBIAR EL PUERTO)
-const app = express();              // Crear la aplicación Express
-const PORT = 3001;                  // Puerto donde va a correr nuestro servidor
+const app = express();
+const PORT = process.env.PORT ?? 3001;
 
-// 3. CONFIGURAR MIDDLEWARES (funciones que se ejecutan antes de las rutas)
-app.use(cors());                    // Permitir peticiones desde cualquier origen
-app.use(express.json());            // Convertir JSON del body de las peticiones a objetos JavaScript
+app.use(cors());
+app.use(express.json());
 
-// 4. CREAR NUESTRA "BASE DE DATOS" EN MEMORIA
-// ⚠️ IMPORTANTE: Esta base de datos se borra cuando apagamos el servidor
-let projects = [
-  { id: 1, name: 'CV en Angular', stars: 5 },      // Proyecto 1
-  { id: 2, name: 'Juego de Memoria', stars: 4 }    // Proyecto 2
+// Esta información se mantiene en memoria.
+let experiences = [
+  {
+    id: 1,
+    period: '2023-2025',
+    company: 'Amazon Web Services',
+    role: 'Cloud Support Associate'
+  },
+  {
+    id: 2,
+    period: '2021-2023',
+    company: 'Google',
+    role: 'Backend Developer'
+  },
+  {
+    id: 3,
+    period: '2020-2021',
+    company: 'Startup XYZ',
+    role: 'Full Stack Intern'
+  }
 ];
 
-// ========================================
-// DEFINIR LAS RUTAS DE NUESTRA API
-// ========================================
+const getNextId = () =>
+  Math.max(0, ...experiences.map((experience) => experience.id)) + 1;
 
-// 5. RUTA GET /projects - OBTENER TODOS LOS PROYECTOS
-app.get('/projects', (req, res) => {
-  // req = request (petición que llega)
-  // res = response (respuesta que enviamos)
-  res.json(projects); // Enviar todos los proyectos como JSON
+// GET / - devolver todas las experiencias
+app.get('/', (req, res) => {
+  res.json(experiences);
 });
 
-// 6. RUTA GET /projects/:id - OBTENER UN PROYECTO ESPECÍFICO POR ID
-app.get('/projects/:id', (req, res) => {
-  const id = Number(req.params.id);           // Convertir el ID de string a número
-  const proyecto = projects.find(p => p.id === id); // Buscar el proyecto con ese ID
-  
-  // Si no encuentra el proyecto, devolver error 404
-  if (!proyecto) {
-    return res.status(404).json({ error: 'Proyecto no encontrado' });
+// GET /:id - devolver una experiencia por ID
+app.get('/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const experience = experiences.find((item) => item.id === id);
+
+  if (!experience) {
+    return res.status(404).json({ error: 'Experiencia no encontrada' });
   }
-  
-  res.json(proyecto); // Enviar el proyecto encontrado
+
+  res.json(experience);
 });
 
-// 7. RUTA POST /projects - CREAR UN NUEVO PROYECTO
-app.post('/projects', (req, res) => {
-  const { name, stars } = req.body; // Extraer name y stars del body de la petición
-  
-  // Validar que el nombre sea obligatorio
-  if (!name) {
-    return res.status(422).json({ error: 'El campo "name" es obligatorio' });
-  }
-  
-  // Generar un nuevo ID (el más alto + 1)
-  const nuevoId = Math.max(0, ...projects.map(p => p.id)) + 1;
-  
-  // Crear el nuevo proyecto
-  const nuevoProyecto = { 
-    id: nuevoId, 
-    name: name, 
-    stars: Number(stars) || 0  // Convertir stars a número, si no existe usar 0
+// POST / - crear una nueva experiencia
+app.post('/', (req, res) => {
+  const { period, company, role } = req.body;
+
+  const newExperience = {
+    id: getNextId(),
+    period: period ?? '',
+    company: company ?? '',
+    role: role ?? ''
   };
-  
-  projects.push(nuevoProyecto); // Agregar el proyecto a nuestra "base de datos"
-  res.status(201).json(nuevoProyecto); // Devolver el proyecto creado con código 201
+
+  experiences.push(newExperience);
+  res.status(201).json(newExperience);
 });
 
-// 8. RUTA PATCH /projects/:id - ACTUALIZAR PARCIALMENTE UN PROYECTO
-app.patch('/projects/:id', (req, res) => {
-  const id = Number(req.params.id);           // ID del proyecto a actualizar
-  const proyecto = projects.find(p => p.id === id); // Buscar el proyecto
-  
-  // Si no encuentra el proyecto, devolver error 404
-  if (!proyecto) {
-    return res.status(404).json({ error: 'Proyecto no encontrado' });
+// PATCH /:id - actualizar campos de manera parcial
+app.patch('/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const experience = experiences.find((item) => item.id === id);
+
+  if (!experience) {
+    return res.status(404).json({ error: 'Experiencia no encontrada' });
   }
 
-  const { name, stars } = req.body; // Datos nuevos que queremos actualizar
-  
-  // Actualizar solo los campos que vienen en la petición
-  if (name !== undefined) proyecto.name = name;           // Si viene name, actualizarlo
-  if (stars !== undefined) proyecto.stars = Number(stars); // Si viene stars, actualizarlo
+  const { period, company, role } = req.body;
 
-  res.json(proyecto); // Devolver el proyecto actualizado
+  if (period !== undefined) experience.period = period;
+  if (company !== undefined) experience.company = company;
+  if (role !== undefined) experience.role = role;
+
+  res.json(experience);
 });
 
-// 9. RUTA DELETE /projects/:id - ELIMINAR UN PROYECTO
-app.delete('/projects/:id', (req, res) => {
-  const id = Number(req.params.id);                    // ID del proyecto a eliminar
-  const indice = projects.findIndex(p => p.id === id); // Buscar el índice del proyecto
-  
-  // Si no encuentra el proyecto, devolver error 404
-  if (indice === -1) {
-    return res.status(404).json({ error: 'Proyecto no encontrado' });
+// DELETE /:id - eliminar una experiencia
+app.delete('/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const index = experiences.findIndex((item) => item.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ error: 'Experiencia no encontrada' });
   }
-  
-  // Eliminar el proyecto del array y guardarlo en una variable
-  const proyectoEliminado = projects.splice(indice, 1)[0];
-  res.json(proyectoEliminado); // Devolver el proyecto que se eliminó
+
+  const [deletedExperience] = experiences.splice(index, 1);
+  res.json(deletedExperience);
 });
 
-// 10. MANEJAR RUTAS NO ENCONTRADAS (404)
+// Middleware para rutas inexistentes
 app.use((req, res) => {
   res.status(404).json({ error: 'Ruta no encontrada' });
 });
 
-// 11. INICIAR EL SERVIDOR
 app.listen(PORT, () => {
-  console.log(`🚀 API escuchando en http://localhost:${PORT}`);
-  console.log("📋 Endpoints disponibles:");
-  console.log(`   GET    /projects     - Ver todos los proyectos`);
-  console.log(`   GET    /projects/:id - Ver un proyecto específico`);
-  console.log(`   POST   /projects     - Crear un nuevo proyecto`);
-  console.log(`   PATCH  /projects/:id - Actualizar un proyecto`);
-  console.log(`   DELETE /projects/:id - Eliminar un proyecto`);
+  console.log(`🚀 API de experiencia escuchando en http://localhost:${PORT}`);
 });
