@@ -30,12 +30,6 @@ export interface ProjectItem {
   description: string;
 }
 
-export interface ExperienceItem {
-  period: string;
-  company: string;
-  role: string;
-}
-
 export interface ExtraInfoItem {
   label: string;
   value: string;
@@ -124,19 +118,6 @@ export const projects: ProjectItem[] = [
     title: 'Proyecto - Migración de Datos y Web App para Gestión Bancaria',
     description:
       'Migración de datos bancarios desde archivos Excel a PostgreSQL en Docker y desarrollo de una aplicación web con vistas separadas para clientes y administradores, construida con React y Python.'
-  }
-];
-
-export const experienceHistory: ExperienceItem[] = [
-  {
-    period: '2023-2025',
-    company: 'Amazon',
-    role: 'Desarrollador Web'
-  },
-  {
-    period: '2021-2023',
-    company: 'Google',
-    role: 'Backend Developer'
   }
 ];
 
