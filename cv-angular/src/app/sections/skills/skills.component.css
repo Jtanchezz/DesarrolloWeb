@@ -1,5 +1,17 @@
+.cv-skills__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cv-skills__header--compact {
+  justify-content: flex-start;
+}
+
 .cv-skills h2 {
-  margin: 0 0 1.5rem;
+  margin: 0;
   font-size: 1.6rem;
 }
 
@@ -29,6 +41,7 @@
   margin: 0;
   display: grid;
   gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .cv-skills__list li {
@@ -49,4 +62,39 @@
   text-align: center;
   color: var(--color-muted);
   font-weight: 600;
+}
+
+.cv-skills__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-primary);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cv-skills__back:hover,
+.cv-skills__back:focus-visible {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .cv-skills__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cv-skills__header--compact {
+    align-items: flex-start;
+  }
+
+  .cv-skills__back {
+    width: 100%;
+    justify-content: center;
+  }
 }

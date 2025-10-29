@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { DataService } from '../../data/data.service';
 import { CapitalizePipe } from '../../pipes/capitalize.pipe';
@@ -8,12 +9,13 @@ import { CapitalizePipe } from '../../pipes/capitalize.pipe';
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, FormsModule, CapitalizePipe],
+  imports: [CommonModule, FormsModule, RouterModule, CapitalizePipe],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent {
+  @Input() showBackLink = true;
   readonly skills: readonly string[];
   query = '';
   get filteredSkills() {
