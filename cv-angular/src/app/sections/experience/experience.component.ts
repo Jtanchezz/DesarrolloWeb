@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Observable, of } from 'rxjs';
@@ -15,6 +15,7 @@ import { ExperienceService, Experience } from './experience.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExperienceComponent {
+  @Input() showBackLink = true;
   private readonly experienceService = inject(ExperienceService);
 
   readonly experiences$: Observable<Experience[]> = this.experienceService

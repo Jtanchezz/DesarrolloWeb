@@ -1,5 +1,19 @@
-<section class="cv-skills cv-card" id="softskills">
-  <h2>Soft Skills</h2>
+<section
+  class="cv-skills cv-card"
+  id="softskills"
+  [class.cv-card--standalone]="showBackLink"
+>
+  <header class="cv-skills__header" [class.cv-skills__header--compact]="!showBackLink">
+    <h2>Soft Skills</h2>
+    <a
+      *ngIf="showBackLink"
+      routerLink="/"
+      class="cv-skills__back"
+      aria-label="Volver al CV principal"
+    >
+      ← Volver al CV
+    </a>
+  </header>
   <div class="cv-skills__search">
     <input
       type="text"
