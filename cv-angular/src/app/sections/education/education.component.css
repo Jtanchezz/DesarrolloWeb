@@ -1,0 +1,57 @@
+.cv-education h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.6rem;
+}
+
+.cv-education table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.cv-education caption {
+  caption-side: top;
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-align: left;
+}
+
+.cv-education th,
+.cv-education td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.cv-education thead {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.cv-education thead th {
+  border-bottom: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.cv-education tbody tr:nth-child(even) {
+  background: rgba(87, 108, 168, 0.08);
+}
+
+.cv-education tfoot td {
+  background: rgba(39, 70, 144, 0.08);
+  font-style: italic;
+  border-bottom: none;
+}
+
+@media (max-width: 640px) {
+  .cv-education table,
+  .cv-education caption,
+  .cv-education th,
+  .cv-education td {
+    font-size: 0.95rem;
+  }
+}

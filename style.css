@@ -1,0 +1,310 @@
+:root{
+  --accent: #1f6feb;            /* color acento */
+  --text: #0f172a;              /* texto principal */
+  --muted: #64748b;             /* texto secundario */
+  --bg-soft: #f6f8fa;           /* fondos suaves (filas zebra) */
+}
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 16px;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header{ text-align: center; margin-block: 12px 20px; }
+header h1{ margin: 0 0 8px; font-size: 1.8rem; }
+header img[alt*="Foto"]{
+  display: block;
+  margin: 12px auto 0;
+  width: 180px;
+  max-width: 60vw;
+}
+
+header > div{
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+header > div a{
+  display: inline-flex;
+  padding: 6px;
+  border-radius: 8px;
+  transition: transform .15s ease, background-color .15s ease;
+}
+header > div a:hover,
+header > div a:focus-visible{
+  background: var(--bg-soft);
+  outline: 2px solid transparent;
+  transform: translateY(-1px);
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 20px;
+  padding: 0;
+}
+nav a{
+  text-decoration: none;
+  color: var(--accent);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+nav a:hover,
+nav a:focus-visible{
+  background: var(--bg-soft);
+  text-decoration: underline;
+}
+
+/* Flexbox layout for Tecnologías list */
+#tecnologias ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+#tecnologias li{
+  padding: 6px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #fff;
+}
+
+main section{ margin-bottom: 24px; }
+main h2{ margin: 0 0 10px; font-size: 1.4rem; }
+
+/* Grid layout for Proyectos cards */
+#proyectos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+#proyectos article{
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background: rgb(255, 255, 255);
+}
+caption{
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+thead th{
+  background: var(--accent);
+  color: white;
+  text-align: left;
+}
+th, td{
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+}
+tbody tr:nth-child(even){ background: var(--bg-soft); }
+tfoot td{
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+aside{
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+footer{
+  text-align: center;
+  margin-top: 28px;
+}
+footer button{
+  padding: 10px 14px;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  background: white;
+  color: var(--accent);
+  border-radius: 8px;
+  cursor: pointer;
+}
+footer button:hover,
+footer button:focus-visible{
+  background: var(--accent);
+  color: white;
+}
+
+a[href="#contenido"]{
+  position: absolute;
+  left: -9999px;
+}
+a[href="#contenido"]:focus{
+  left: 16px;
+  top: 10px;
+  background: #fff;
+  border: 2px solid var(--accent);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px){
+  header h1{ font-size: 1.5rem; }
+  th, td{ padding: 8px; }
+  nav a{ padding: 6px 8px; }
+}
+@media (min-width: 900px){
+  body{ max-width: 980px; margin: 24px auto; }
+}
+
+@media (min-width: 1200px){
+  body{ max-width: 1200px; }
+  header h1{ font-size: 2rem; }
+  #proyectos{
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  #tecnologias ul{ gap: 14px; }
+  th, td{ padding: 12px 14px; }
+}
+
+/* iPhone 14 Pro Max */
+@media (width: 430px) and (height: 932px) and (orientation: portrait){
+  body{ margin: 12px; }
+  header h1{ font-size: 1.4rem; }
+  header img[alt*="Foto"]{ width: 160px; max-width: 70vw; }
+  nav ul{ gap: 12px; }
+  nav a{ padding: 6px 8px; }
+  #tecnologias ul{ gap: 10px; }
+  #proyectos{ gap: 12px; }
+  #proyectos article{ padding: 10px; }
+  th, td{ padding: 7px; }
+  aside{ padding: 10px; }
+}
+
+/* MacBook Pro */
+@media (width: 932px) and (height: 430px) and (orientation: landscape){
+  body{ margin: 12px 16px; }
+  header h1{ font-size: 1.5rem; }
+  header img[alt*="Foto"]{ width: 170px; max-width: 45vw; }
+  nav ul{ gap: 14px; }
+  #tecnologias ul{ gap: 10px; }
+  #proyectos{ gap: 14px; }
+  #proyectos article{ padding: 10px; }
+}
+
+/* iPad Pro */
+@media (width: 1024px) and (height: 1366px) and (orientation: portrait){
+  body{ margin: 20px auto; max-width: 980px; }
+  header h1{ font-size: 1.8rem; }
+  #proyectos{ grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  #proyectos article{ padding: 12px; }
+  nav ul{ gap: 16px; }
+  th, td{ padding: 11px 13px; }
+}
+@media (width: 1366px) and (height: 1024px) and (orientation: landscape){
+  body{ margin: 24px auto; max-width: 1200px; }
+  header h1{ font-size: 1.9rem; }
+  #proyectos{ grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  #proyectos article{ padding: 12px; }
+  nav ul{ gap: 18px; }
+  th, td{ padding: 12px 14px; }
+}
+
+/* ===== Polish visual (cohesion con --accent) ===== */
+.navbar{ background-color: var(--accent) !important; }
+.navbar .navbar-brand,
+.navbar .nav-link{ color:#fff !important; }
+.navbar .nav-link:hover,
+.navbar .nav-link:focus{ text-decoration: underline; }
+
+/* Saludo dinámico destacado */
+#saludo{ color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-top: 6px; }
+
+/* Badges más legibles */
+.badge{ margin: 4px 6px 0 0; font-weight: 600; }
+
+/* List group suavizado */
+.list-group-item{ border-color: #e5e7eb; }
+.list-group-item:hover{ background: var(--bg-soft); }
+
+/* Botón PDF con micro-animación */
+footer .btn{ box-shadow: 0 2px 8px rgba(31,111,235,.25); transition: transform .15s ease, box-shadow .15s ease; }
+footer .btn:hover,
+footer .btn:focus-visible{ transform: translateY(-1px); box-shadow: 0 6px 16px rgba(31,111,235,.35); }
+
+/* Tablas con sutil elevación y bordes redondeados */
+table{ box-shadow: 0 1px 6px rgba(0,0,0,.06); border-radius: 8px; }
+
+/* ===== Dark mode (activado con body.dark-mode) ===== */
+body.dark-mode{
+  background-color: #0b1220; /* fondo oscuro */
+  color: #e5e7eb;            /* texto claro */
+}
+body.dark-mode a{ color: #93c5fd; }              /* enlaces legibles */
+body.dark-mode #saludo{ color: #93c5fd; }        /* saludo con acento claro */
+body.dark-mode .navbar{
+  background-color: #0d3ea3 !important;          /* navbar más oscura pero azul */
+}
+body.dark-mode .list-group-item{
+  background-color: #0f172a;
+  color: #e5e7eb;
+  border-color: #1f2937;
+}
+body.dark-mode table{
+  background-color: #0f172a;
+}
+body.dark-mode thead th{
+  background: #1558b0;
+  color: #fff;
+}
+body.dark-mode th, body.dark-mode td{
+  border-color: #1f2937;
+}
+body.dark-mode tbody tr:nth-child(even){
+  background-color: #111827;
+}
+body.dark-mode footer .btn{
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+/* Proyectos en modo oscuro: fondo y texto legibles */
+
+body.dark-mode #proyectos article{
+  background: #1e293b;   /* fondo oscuro legible */
+  color: #e5e7eb;        /* texto claro */
+  border-color: #334155; /* borde acorde al tema oscuro */
+}
+
+/* Información adicional en modo oscuro */
+body.dark-mode aside{
+  background: #1e293b;   /* fondo oscuro legible */
+  color: #e5e7eb;        /* texto claro */
+  border-color: #334155; /* borde acorde al tema oscuro */
+}
+
+/* Información adicional alternativa en modo oscuro */
+body.dark-mode aside.alt{
+  background: #0f172a;   /* un tono diferente al de proyectos */
+  color: #f1f5f9;        /* texto más claro */
+  border-color: #1e293b;
+}
+
+@media print{
+  nav, footer, a[href="#covntenido"]{ display: none !important; }
+  body{ margin: 0; }
+  table{ page-break-inside: avoid; }
+}

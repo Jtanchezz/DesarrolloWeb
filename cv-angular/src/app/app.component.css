@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+  background: radial-gradient(circle at top, var(--color-primary-soft), transparent 55%);
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    padding: 2rem 1rem 3rem;
+  }
+}

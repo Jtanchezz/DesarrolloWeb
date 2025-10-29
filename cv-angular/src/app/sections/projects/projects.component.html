@@ -1,0 +1,35 @@
+<section class="cv-projects cv-card" id="proyectos">
+  <header class="cv-projects__header">
+    <h2>Proyectos Recientes</h2>
+    <p>Repositorios públicos de GitHub actualizados recientemente.</p>
+  </header>
+
+  <div class="cv-projects__status" *ngIf="isLoading()">
+    <p>Cargando proyectos…</p>
+  </div>
+
+  <div class="cv-projects__status cv-projects__status--error" *ngIf="hasError()">
+    <p>{{ errorMessage() }}</p>
+  </div>
+
+  <ng-container *ngIf="projects$ | async as projects">
+    <div class="cv-projects__list" *ngIf="projects.length > 0">
+      <article *ngFor="let project of projects" class="cv-projects__item">
+        <div class="cv-projects__item-header">
+          <h3>{{ project.name }}</h3>
+          <span class="cv-projects__language" *ngIf="project.language !== 'Sin lenguaje definido'">{{ project.language }}</span>
+        </div>
+        <p>{{ project.description }}</p>
+        <footer class="cv-projects__meta">
+          <span class="cv-projects__stars" *ngIf="project.stars > 0">⭐ {{ project.stars }}</span>
+          <span class="cv-projects__updated">Actualizado: {{ project.updatedAt | date: 'mediumDate' }}</span>
+          <a [href]="project.url" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+        </footer>
+      </article>
+    </div>
+
+    <div class="cv-projects__status" *ngIf="!isLoading() && !hasError() && projects.length === 0">
+      <p>No se encontraron proyectos públicos.</p>
+    </div>
+  </ng-container>
+</section>

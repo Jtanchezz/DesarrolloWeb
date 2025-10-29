@@ -1,0 +1,77 @@
+<section
+  class="cv-experience cv-card"
+  id="experiencia"
+  [class.cv-card--standalone]="showBackLink"
+>
+  <header
+    class="cv-experience__header"
+    [class.cv-experience__header--compact]="!showBackLink"
+  >
+    <h2>Experiencia Laboral</h2>
+    <a
+      *ngIf="showBackLink"
+      routerLink="/"
+      class="cv-experience__back"
+      aria-label="Volver al CV principal"
+    >
+      ← Volver al CV
+    </a>
+  </header>
+  <div class="cv-experience__actions">
+    <button
+      type="button"
+      (click)="toggleExperience()"
+      [attr.aria-expanded]="showExperience"
+      aria-controls="experience-table"
+    >
+      {{ showExperience ? 'Ocultar experiencia laboral' : 'Mostrar experiencia laboral' }}
+    </button>
+  </div>
+  <p *ngIf="errorMessage" class="cv-experience__error" role="alert">
+    {{ errorMessage }}
+  </p>
+  <ng-container *ngIf="experiences$ | async as experiences; else loading">
+    <ng-container *ngIf="showExperience; else hidden">
+      <table *ngIf="experiences.length; else empty" id="experience-table">
+        <caption>{{ caption }}</caption>
+        <thead>
+          <tr>
+            <th scope="col">Periodo</th>
+            <th scope="col">Empresa</th>
+            <th scope="col">Puesto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of experiences">
+            <th scope="row">{{ item.period }}</th>
+            <td>{{ item.company }}</td>
+            <td>{{ item.role }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">{{ footnote }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </ng-container>
+  </ng-container>
+  <ng-template #empty>
+    <p class="cv-experience__empty">No hay experiencia laboral disponible.</p>
+  </ng-template>
+  <ng-template #hidden></ng-template>
+  <ng-template #loading>
+    <p class="cv-experience__loading">Cargando experiencia laboral…</p>
+  </ng-template>
+  <nav class="cv-experience__nav" aria-label="Secciones de experiencia">
+    <a
+      routerLink="/experience/jobs"
+      routerLinkActive="is-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Trabajos
+    </a>
+    <a routerLink="/experience/studies" routerLinkActive="is-active">Estudios</a>
+  </nav>
+  <router-outlet></router-outlet>
+</section>
